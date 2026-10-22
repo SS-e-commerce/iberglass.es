@@ -1,628 +1,1172 @@
-
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Iberglass | Glass terrace and balcony systems in Spain</title>
-<meta name="description" content="Iberglass designs, measures and installs glass profile systems for terraces and balconies in Spain.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibiglass.es | Premium Fiberglass Terrace Enclosures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           CUSTOMIZATION PANEL (CHANGE COLORS/FONTS HERE)
+           ========================================= */
+        :root {
+            /* COLORS */
+            --primary-blue: #0A192F;       /* Deep Navy Blue (Main Backgrounds) */
+            --secondary-blue: #112240;     /* Lighter Navy (Cards/Sections) */
+            --accent-gold: #D4AF37;        /* Metallic Gold (Buttons/Accents) */
+            --light-gold: #F3E5AB;         /* Soft Gold (Hover states) */
+            --text-light: #F8F9FA;         /* White/Off-white text */
+            --text-dark: #1A1A1A;          /* Dark text for light backgrounds */
+            --bg-light: #FFFFFF;           /* Pure white background */
+            --bg-off-white: #F4F6F9;       /* Off-white for alternating sections */
 
-<style>
-/* ===== 1) COLORS: change only the hex values ===== */
-:root{
-  --ink:#0A2540;        /* deep azure blue: text and dark sections */
-  --paper:#F6F8FB;      /* page background */
-  --gold:#C9A24B;       /* gold: frames, lines, hover */
-  --gold-dark:#8A6A1C;  /* gold used for small text on light background */
-  --glass:#BFD3E8;      /* glass and photo placeholders */
-  --line:#DCE3EC;       /* thin lines */
-  --soft:#3A5068;       /* secondary text */
-  --btn-bg:#0A2540;     /* button background */
-  --btn-text:#FFFFFF;   /* button text */
-  --btn-hover:#C9A24B;  /* button hover background */
-  --btn-hover-text:#0A2540;
-  --max:1120px;
-}
-</style>
+            /* FONTS */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
 
-<script>
-/* ===== 2) CONTENT: everything you may want to change ===== */
-window.SITE = {
-  brand: "Iberglass",
-  logo: "",                 // e.g. "photos/logo.png". Empty = brand name as text
-  logoHeight: 40,           // logo height in px
-  defaultLang: "auto",      // "auto" (browser language), "es" or "en"
+            /* FONT SIZES */
+            --h1-size: 3.5rem;
+            --h2-size: 2.5rem;
+            --h3-size: 1.5rem;
+            --body-size: 1rem;
+            --small-size: 0.875rem;
 
-  phone: "+34000000000",    // with country code, no spaces
-  whatsapp: "34000000000",  // country code + number, no + sign
-  email: "info@example.com",
-  instagram: "#",
-  googleBusiness: "#",      // link to your Google Business Profile / review page
+            /* SPACING & LAYOUT */
+            --container-width: 1200px;
+            --section-padding: 100px 0;
+            --border-radius: 8px;
+        }
 
-  /* Quote form. Empty = the form opens WhatsApp with the data filled in.
-     To receive it by email: create a free form at formspree.io and paste its
-     address here, e.g. "https://formspree.io/f/xxxxxxx" */
-  formEndpoint: "",
+        /* =========================================
+           GLOBAL STYLES
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  buttons: { quote: "#quote", work: "#work" },
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* Show or hide home page sections (true / false) */
-  show: { services: true, gift: true, process: true, work: true, reviews: true, quote: true },
+        body {
+            font-family: var(--font-body);
+            font-size: var(--body-size);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-  /* Photos: put files in a "photos" folder, write paths like "photos/a.jpg". "" = placeholder */
-  /* Cinematic hero video (replaces the animated hero when filled in).
-     Put the files in "photos", e.g. "photos/hero.mp4". Mobile video and poster are optional. */
-  heroVideo: "",            // landscape mp4, 1920x1080, about 6-12 s, no sound, under 6 MB
-  heroVideoMobile: "",      // optional portrait mp4, 720x1280, under 3 MB
-  heroPoster: "",           // still image shown while the video loads
-  heroImage: "", heroAlt: "Glass terrace installed by Iberglass",
-  aboutImage: "", aboutAlt: "The Iberglass team",
-  gallery: ["", "", "", "", ""],
-  galleryAlt: ["", "", "", "", ""],
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            line-height: 1.2;
+        }
 
-  /* Reviews. Empty list = three placeholders. Example:
-     { name:"Maria", city:"Alicante", stars:5, text:{ en:"Great work.", es:"Gran trabajo." } } */
-  reviews: [],
+        h1 { font-size: var(--h1-size); }
+        h2 { font-size: var(--h2-size); margin-bottom: 20px; }
+        h3 { font-size: var(--h3-size); }
 
-  text: {
-    en: {
-      nav_home:"Home", nav_about:"About", nav_contact:"Contact",
-      h1:"Glass that keeps the terrace open and the wind out.",
-      lead:"Iberglass designs, measures and installs glass profile systems for terraces and balconies across Spain.",
-      cta_quote:"Request a quote", cta_work:"See our work",
-      s_title:"What we do",
-      s1_t:"Terrace glazing", s1_d:"Fixed and sliding glass panels in slim profiles, so the terrace works in every season.",
-      s2_t:"Balcony glazing", s2_d:"Blocks wind and street noise without taking away the view or the light.",
-      s3_t:"Made to measure", s3_d:"Every opening is measured on site, so the glass fits your structure, not a catalogue.",
-      gift_title:"A gift package with every order",
-      gift_lead:"Every installation comes with three extras, at no cost.",
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: gift_1:"Free on-site measurement", gift_2:"Glass care kit: cleaner and microfibre cloth", gift_3:"A check-up visit after 12 months",
-      gift_cta:"Claim your gift with a quote",
-      p_title:"How it works",
-      p1_t:"Measure on site", p1_d:"We visit, measure the opening and check the structure.",
-      p2_t:"Quote and design", p2_d:"You get a clear price and a drawing of the finished result.",
-      p3_t:"Installation", p3_d:"Our team installs the system and leaves the site clean.",
-      g_title:"Recent installations", g_ph:"Project photo",
-      r_title:"What customers say", r_ph:"Your customer’s review goes here. Edit it in the CONTENT block.", r_name:"Customer name", r_google:"Leave a review on Google",
-      q_title:"Get your quote",
-      q_lead:"Enter the size of your terrace or balcony. We calculate the price and contact you.",
-      f_name:"Name", f_phone:"Phone", f_email:"Email", f_city:"City", f_type:"Project",
-      f_t1:"Terrace", f_t2:"Balcony", f_t3:"Other", f_qty:"Number of panels (optional)",
-      f_w:"Width (cm)", f_h:"Height (cm)", f_msg:"Anything else we should know?",
-      f_consent:"I agree to be contacted about my quote.", f_send:"Send request",
-      f_ok:"Thank you. We received your request and will contact you soon.",
-      f_err:"Something went wrong. Please call or write to us directly.",
-      f_wa:"Opening WhatsApp with your details. Press send there.",
-      a_title:"About Iberglass",
-      a_p1:"Iberglass installs glass profile systems on terraces and balconies across Spain. We started with one idea: a terrace should be usable all year, without losing the view.",
-      a_p2:"We measure every opening on site and explain the options before you decide, so there are no surprises on the day of installation.",
-      a_v_title:"How we work",
-      a_v1_t:"Clear prices", a_v1_d:"You get the full price before we start.",
-      a_v2_t:"Measured on site", a_v2_d:"Nothing is ordered until we have measured.",
-      a_v3_t:"Clean finish", a_v3_d:"We leave the site as we found it.",
-      a_cta:"Request a quote",
-      c_title:"Contact", c_lead:"Call, write, or send the form with your measurements.",
-      c_call:"Call", c_wa:"WhatsApp", c_mail:"Email",
-      c_addr_t:"Address", c_addr:"[Street], [City], Spain",
-      c_hours_t:"Opening hours", c_hours:"Monday to Friday, 9:00 to 18:00",
-      l_ig:"Instagram", l_gb:"Google Business Profile",
-      footer:"© 2026 Iberglass. Glass systems for terraces and balconies in Spain."
-    },
-    es: {
-      nav_home:"Inicio", nav_about:"Nosotros", nav_contact:"Contacto",
-      h1:"Cristal que mantiene la terraza abierta y el viento fuera.",
-      lead:"Iberglass diseña, mide e instala cerramientos de cristal con perfiles para terrazas y balcones en toda España.",
-      cta_quote:"Pedir presupuesto", cta_work:"Ver trabajos",
-      s_title:"Qué hacemos",
-      s1_t:"Cerramiento de terrazas", s1_d:"Paneles de cristal fijos y correderos en perfiles finos, para usar la terraza en cualquier estación.",
-      s2_t:"Cerramiento de balcones", s2_d:"Frena el viento y el ruido de la calle sin perder la vista ni la luz.",
-      s3_t:"A medida", s3_d:"Cada hueco se mide en obra, para que el cristal se adapte a tu estructura y no a un catálogo.",
-      gift_title:"Un pack de regalo con cada pedido",
-      gift_lead:"Cada instalación incluye tres extras, sin coste.",
-      gift_1:"Medición en obra gratuita", gift_2:"Kit de cuidado del cristal: limpiador y paño de microfibra", gift_3:"Una visita de revisión a los 12 meses",
-      gift_cta:"Pide tu regalo con un presupuesto",
-      p_title:"Cómo trabajamos",
-      p1_t:"Medición en obra", p1_d:"Visitamos la obra, medimos el hueco y revisamos la estructura.",
-      p2_t:"Presupuesto y diseño", p2_d:"Recibes un precio claro y un dibujo del resultado final.",
-      p3_t:"Instalación", p3_d:"Nuestro equipo instala el sistema y deja la obra limpia.",
-      g_title:"Últimos trabajos", g_ph:"Foto del proyecto",
-      r_title:"Opiniones de clientes", r_ph:"Aquí va la opinión de tu cliente. Edítala en el bloque CONTENT.
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: ", r_name:"Nombre del cliente", r_google:"Deja tu opinión en Google",
-      q_title:"Pide tu presupuesto",
-      q_lead:"Indica las medidas de tu terraza o balcón. Calculamos el precio y te contactamos.",
-      f_name:"Nombre", f_phone:"Teléfono", f_email:"Correo", f_city:"Ciudad", f_type:"Proyecto",
-      f_t1:"Terraza", f_t2:"Balcón", f_t3:"Otro", f_qty:"Número de paneles (opcional)",
-      f_w:"Ancho (cm)", f_h:"Alto (cm)", f_msg:"¿Algo más que debamos saber?",
-      f_consent:"Acepto que me contacten sobre mi presupuesto.", f_send:"Enviar solicitud",
-      f_ok:"Gracias. Hemos recibido tu solicitud y te contactaremos pronto.",
-      f_err:"Algo ha fallado. Llámanos o escríbenos directamente.",
-      f_wa:"Abriendo WhatsApp con tus datos. Pulsa enviar allí.",
-      a_title:"Sobre Iberglass",
-      a_p1:"Iberglass instala cerramientos de cristal con perfiles en terrazas y balcones de toda España. Empezamos con una idea: una terraza debe poder usarse todo el año sin perder la vista.",
-      a_p2:"Medimos cada hueco en obra y explicamos las opciones antes de que decidas, para que no haya sorpresas el día de la instalación.",
-      a_v_title:"Cómo trabajamos",
-      a_v1_t:"Precios claros", a_v1_d:"Recibes el precio completo antes de empezar.",
-      a_v2_t:"Medido en obra", a_v2_d:"No se pide nada hasta haber medido.",
-      a_v3_t:"Acabado limpio", a_v3_d:"Dejamos la obra como la encontramos.",
-      a_cta:"Pedir presupuesto",
-      c_title:"Contacto", c_lead:"Llama, escríbenos o envía el formulario con tus medidas.",
-      c_call:"Llamar", c_wa:"WhatsApp", c_mail:"Correo",
-      c_addr_t:"Dirección", c_addr:"[Calle], [Ciudad], España",
-      c_hours_t:"Horario", c_hours:"De lunes a viernes, de 9:00 a 18:00",
-      l_ig:"Instagram", l_gb:"Perfil de Google",
-      footer:"© 2026 Iberglass. Sistemas de cristal para terrazas y balcones en España."
-    }
-  }
-};
-</script>
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-<style>
-/* ===== 3) LAYOUT: normally no need to edit below ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth}
-body{font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:1.0625rem}
-h1,h2,h3{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.015em}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: var(--body-size);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-header{border-bottom:1px solid var(--line)}
-.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-top:12px;padding-bottom:12px}
-.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.4rem;text-decoration:none;letter-spacing:-.02em;display:flex;align-items:center}
-.logo img{display:block;width:auto}
-nav{display:flex;gap:22px;align-items:center}
-nav a{font-weight:600;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
-nav a:hover,nav a[aria-current]{border-bottom-color:var(--gold)}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.lang button{font:inherit;font-size:.875rem;font-weight:600;background:none;border:0;padding:6px 12px;cursor:pointer;color:var(--ink)}
-.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            border-color: var(--accent-gold);
+        }
 
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:88px}
-.hero h1{font-size:clamp(2.4rem,5.4vw,4.1rem);margin-bottom:22px;max-width:15ch}
-.hero .lead{font-size:1.2rem;max-width:46ch;margin-bottom:32px;color:var(--soft)}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;padding:14px 26px;border-radius:6px;border:2px solid var(--btn-bg);transition:background .15s,color .15s,border-color .15s}
-.btn.primary{background:var(--btn-bg);color:var(--btn-text)}
-.btn.
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: primary:hover{background:var(--btn-hover);border-color:var(--btn-hover);color:var(--btn-hover-text)}
-.btn.ghost{color:var(--btn-bg);background:none}
-.btn.ghost:hover{background:var(--btn-bg);color:var(--btn-text)}
-.dark .btn{border-color:#fff;color:#fff}
-.dark .btn.primary{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-.dark .btn.primary:hover{background:#fff;border-color:#fff}
-.dark .btn.ghost:hover{background:#fff;color:var(--ink)}
+        .btn-gold:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
 
-.scene{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--glass)}
-.art,.terrace,.cracks{position:absolute;inset:0;width:100%;height:100%}
-.herob{position:relative}
-.herob.cine{overflow:hidden;color:#fff;background:var(--ink)}
-.herob.cine video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.herob.cine::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,37,64,.78),rgba(10,37,64,.3) 60%,rgba(10,37,64,0))}
-.herob.cine .hero{position:relative;z-index:2;grid-template-columns:1fr;min-height:min(86vh,760px);align-content:center}
-.herob.cine .scene{display:none}
-.herob.cine .lead{color:#E3ECF6}
-.herob.cine .btn{border-color:#fff;color:#fff}
-.herob.cine .btn.primary{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-.herob.cine .btn.primary:hover{background:#fff;border-color:#fff}
-.herob.cine .btn.ghost:hover{background:#fff;color:var(--ink)}
-.t-sun{fill:var(--gold)}.t-furn{fill:var(--ink)}
-.rail{position:absolute;left:0;right:0;bottom:0;height:12%;background:var(--ink)}
-.panes{position:absolute;inset:9% 8% 12% 8%;display:grid;grid-template-columns:repeat(3,1fr)}
-.pane{position:relative;border:7px solid var(--gold);border-right-width:0;background:rgba(191,211,232,.3);overflow:hidden}
-.pane:nth-child(1){--s:2.5s}.pane:nth-child(2){--s:2.7s}.pane:nth-child(3){--s:2.9s}
-.pane:last-child{border-right-width:7px}
-.pane::after{content:"";position:absolute;top:-20%;bottom:-20%;width:38%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-14deg)}
-@keyframes sweep{to{left:130%}}
-/* shattering glass: resting state = finished terrace; .play runs the sequence */
-.shard{position:absolute;inset:0;opacity:0;background:linear-gradient(135deg,#F1F6FB,var(--glass));transform-origin:var(--ox) var(--oy)}
-.shard:nth-child(1){clip-path:polygon(48% 46%,0 0,50% 0);--ox:33%;--oy:15%;--x:-25%;--y:110%;--r:-28deg;--d:1.2s}
-.shard:nth-child(2){clip-path:polygon(48% 46%,50% 0,100% 0);--ox:66%;--oy:15%;--x:25%;--y:115%;--r:24deg;--d:1.28s}
-.shard:nth-child(3){clip-path:polygon(48% 46%,100% 0,100% 50%);--ox:83%;--oy:32%;--x:35%;--y:120%;--r:38deg;--d:1.36s}
-.shard:nth-child(4){clip-path:polygon(48% 46%,100% 50%,100% 100%);--ox:83%;--oy:65%;--x:30%;--y:125%;--r:-30deg;--d:1.44s}
-.shard:nth-child(5){clip-path:polygon(48% 46%,100% 100%,50% 100%);--ox:66%;--oy:82%;--x:15%;--y:130%;--r:20deg;--d:1.54s}
-.shard:nth-child(6){clip-path:polygon(48% 46%,50% 100%,0 100%);--ox:33%;--oy:82%;--x:-15%;--y:130%;--r:-22deg;--d:1.5s}
-.shard:nth-child(7){clip-path:polygon(48% 46%,0 100%,0 50%);--ox:16%;--oy:65%;--x:-30%;--y:125%;--r:34deg;--d:1.4s}
-.shard:nth-child(8){clip-path:polygon(48% 46%,0 50%,0 0);--ox:16%;--oy:32%;--x:-35%;--y:120%;--r:-36deg;--d:1.26s}
-.cracks line{fill:none;stroke:#fff;stroke-width:.35;stroke-dasharray:1;opacity:0}
-.glare{position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.75) 45%,transparent 60%);background-size:250% 100%;background-position:150% 0}
-.scene.play .shard{animation:fall 1.2s cubic-bezier(.5,0,.9,.5) var(--d) both}
-.scene.play .cracks line{animation:crack 1.2s ease-out .45s both}
-.scene.play .glare{animation:glare .9s ease-out .1s both}
-.scene.play .pane{animation:slide 1s cubic-bezier(.2,.8,.2,1) var(--s) both}
-.scene.play .pane::after{animation:sweep 1.2s ease-out calc(var(--s) + .8s) both}
-@keyframes fall{0%{opacity:1;transform:none}85%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--r))}}
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: @keyframes crack{0%{stroke-dashoffset:1;opacity:1}45%{stroke-dashoffset:0;opacity:1}80%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
-@keyframes glare{0%{opacity:1;background-position:150% 0}90%{opacity:1}100%{opacity:0;background-position:-50% 0}}
-@keyframes slide{0%{transform:translateX(420%)}100%{transform:none}}
-.replay{position:absolute;right:10px;top:10px;z-index:5;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:rgba(10,37,64,.55);color:#fff;font-size:18px;line-height:1;cursor:pointer}
-.photo{aspect-ratio:4/5;border-radius:4px;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
 
-section{padding:72px 0;border-top:1px solid var(--line)}
-section h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:28px;max-width:22ch}
-section>.wrap>p.sub{max-width:52ch;margin:-12px 0 28px;color:var(--soft)}
-.rows{border-top:2px solid var(--gold)}
-.row{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;padding:26px 0;border-bottom:1px solid var(--line)}
-.row h3{font-size:1.35rem}
-.row p{color:var(--soft);max-width:56ch}
+        .btn-outline:hover {
+            background-color: var(--text-light);
+            color: var(--primary-blue);
+        }
 
-.dark{background:var(--ink);color:#fff;border-top:0}
-.dark p{color:#C9D6E6}
-.gift ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:8px 0 32px}
-.gift li{border-left:3px solid var(--gold);padding-left:16px;font-weight:500;color:#fff}
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;list-style:none;counter-reset:s}
-.steps li{counter-increment:s;border-top:3px solid var(--gold);padding-top:18px}
-.steps li::before{content:counter(s);display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:2rem;color:var(--gold-dark);margin-bottom:8px}
-.steps h3{font-size:1.25rem;margin-bottom:8px}
-.steps p{color:var(--soft)}
+        .section-title h2 {
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+        }
 
-.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px;gap:12px}
-.gal>*{border-radius:4px;overflow:hidden}
-.gal>:first-child{grid-row:span 2}
-.ph{display:flex;align-items:flex-end;padding:14px;font-size:.9rem;font-weight:500;background:linear-gradient(160deg,#E8EFF7,var(--glass))}
-.gal img{width:100%;height:100%;object-fit:cover;display:block}
-.gi{cursor:pointer}
-.gi>*{width:100%;height:100%;filter:grayscale(1) blur(7px);transform:scale(1.08);transition:filter 1.2s ease,transform 1.2s ease}
-.gi:hover>*,.gi:focus-visible>*,.gi.on>*{filter:none;transform:none}
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
 
-.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
-blockquote{border-left:3px solid var(--gold);padding-left:20px}
-.stars{color:var(--gold-dark);letter-spacing:.15em;margin-bottom:8px}
-blockquote p{margin-bottom:12px}
-blockquote footer{font-weight:600;font-size:.95rem}
-.glink{margin-top:28px}
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
 
-.qform{max-width:760px}
-.qform .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;margin-bottom:18px}
-.qform label{display:block;font-weight:600;font-size:.95rem}
-.qform label>span{display:block;margin-bottom:6px}
-.qform input,.qform select,.qform textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid #B9C6D6;border-radius:6px;padding:12px 14px}
-.qform input:focus,.qform select:focus,.qform textarea:focus{border-color:var(--ink)}
-.qform .full{margin-bottom:18px}
-.qform .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-bottom:20px}
-.qform .check input{width:auto;margin-top:5px}
-.qform .check span{display:inline;margin:0}
-.hp{position:absolute;left:-9999px;width:1px;height:1px}
-.status{margin-top:14px;font-weight:600;color:var(--gold-dark)}
+        /* =========================================
+           HEADER & NAVIGATION
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
 
-.about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
-.about p{max-width:54ch;margin-bottom:16px;color:var(--soft)}
-.cinfo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:28px 0 40px}
-.cinfo h3{font-size:1.05rem;margin-bottom:6px}
-.cinfo p{color:#C9D6E6}
-.links{margin-top:20px;display:flex;gap:24px;flex-wrap:wrap}
-.dark .links a{color:#C9D6E6}
-.dark .qform .status{color:var(--gold)}
-.dark .qform label{color:#fff}
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-footer.site{padding:28px 0;font-size:.9rem;color:var(--soft);border-top:1px solid var(--line)}
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: @media (max-width:820px){
-  .herob.cine::before{background:linear-gradient(0deg,rgba(10,37,64,.88),rgba(10,37,64,.2) 65%,rgba(10,37,64,0))}
-  .herob.cine .hero{align-content:end;min-height:82vh;padding-bottom:40px}
-  .hero,.about{grid-template-columns:1fr;gap:36px}
-  .hero{padding-top:44px;padding-bottom:52px}
-  .scene,.photo{aspect-ratio:5/4}
-  .row,.cinfo,.qform .grid{grid-template-columns:1fr}
-  .row{gap:6px}
-  .steps,.gift ul,.revs{grid-template-columns:1fr;gap:26px}
-  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
-  .gal>:first-child{grid-row:auto;grid-column:span 2}
-  section{padding:52px 0}
-  nav{gap:16px}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.replay{display:none}.gi>*{filter:none;transform:none;transition:none}}
-</style>
+        .logo img {
+            height: 50px; /* Adjust based on your logo */
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+        
+        .logo-text span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .header-socials a {
+            color: var(--text-light);
+            margin-left: 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .header-socials a:hover {
+            color: var(--accent-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           HERO SECTION (VIDEO BACKGROUND)
+           ========================================= */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.7);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-gold);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================
+           BEFORE & AFTER SECTION
+           ========================================= */
+        .before-after {
+            padding: var(--section-padding);
+            background-color: var(--bg-off-white);
+        }
+
+        .ba-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            aspect-ratio: 16/9;
+            background: #ccc;
+        }
+
+        .ba-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ba-slider .after-img {
+            clip-path: inset(0 50% 0 0);
+            transition: clip-path 0.1s ease-out;
+        }
+
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--accent-gold);
+            cursor: ew-resize;
+            z-index: 10;
+        }
+
+        .ba-handle::before {
+            content: '\f337';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .ba-label {
+            position: absolute;
+            bottom: 20px;
+            padding: 8px 16px;
+            background: rgba(10, 25, 47, 0.8);
+            color: var(--text-light);
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ba-label.before { left: 20px; }
+        .ba-label.after { right: 20px; }
+
+        /* =========================================
+           ABOUT US SECTION
+           ========================================= */
+        .about-us {
+            padding: var(--section-padding);
+            background: var(--bg-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            text-align: left;
+        }
+
+        .about-text h2::after {
+            left: 0;
+            transform: none;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .about-features li i {
+            color: var(--accent-gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =========================================
+           REVIEWS SECTION
+           ========================================= */
+        .reviews {
+            padding: var(--section-padding);
+            background: var(--primary-blue);
+            color: var(--text-light);
+        }
+
+        .reviews .section-title h2 {
+            color: var(--text-light);
+        }
+
+        .reviews .section-title p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--secondary-blue);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-stars {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        /* =========================================
+           ESTIMATE CALCULATOR & CONTACT FORM
+           ========================================= */
+        .estimate-section {
+            padding: var(--section-padding);
+            background: var(--bg-off-white);
+        }
+
+        .estimate-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: var(--body-size);
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .size-inputs {
+            display: flex;
+            gap: 15px;
+        }
+
+        .size-inputs input {
+            flex: 1;
+        }
+
+        .estimate-result {
+            background: var(--primary-blue);
+            color: var(--text-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 30px 0;
+            display: none; /* Hidden by default */
+        }
+
+        .estimate-result h3 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .estimate-result .price {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+        }
+
+        /* =========================================
+           SPECIAL OFFER / GIFT SECTION
+           ========================================= */
+        .special-offer {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-offer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            animation: pulse 4s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .offer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: var(--small-size);
+            margin-bottom: 20px;
+        }
+
+        .offer-content h2 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .offer-content h2 span {
+            color: var(--accent-gold);
+        }
+
+        .offer-content p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .gift-items {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .gift-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .gift-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        .gift-item h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #050d1a;
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about p {
+            opacity: 0.7;
+            margin: 20px 0;
+        }
+
+        .footer-socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-light);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .footer-socials a:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+
+        .footer-links h4 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            opacity: 0.6;
+            font-size: var(--small-size);
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        @media (max-width: 992px) {
+            :root {
+                --h1-size: 2.5rem;
+                --h2-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-blue);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav.active {
+                max-height: 300px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .header-socials {
+                display: none; /* Hide in header on mobile, keep in footer */
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .estimate-container {
+                padding: 30px 20px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gift-items {
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap bar">
-    <a class="logo" id="logo" href="#home"></a>
-    <nav>
-      <a href="#home" data-i18n="nav_home"></a>
-      <a href="#about" data-i18n="nav_about"></a>
-      <a href="#contact" data-i18n="nav_contact"></a>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="es" aria-pressed="false">ES</button>
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-      </div>
-    </nav>
-  </div>
-</header>
+    <!-- =========================================
+         HEADER
+         ========================================= -->
+    <header>
+        <div class="container header-container">
+            <!-- LOGO PLACEHOLDER: Replace src with your logo URL -->
+            <div class="logo">
+                <a href="#"><span class="logo-text">ibi<span>glass</span>.es</span></a>
+                <!-- OR use an image: <img src="YOUR_LOGO_URL.png" alt="Ibiglass Logo"> -->
+            </div>
 
-<main>
-<!-- ============ HOME ============ -->
-<div class="page" data-page="home">
-  <div class="herob" id="herob"><div class="wrap hero">
-    <div>
-      <h1 data-i18n="h1"></h1>
-      <p class="lead" data-i18n="lead"></p>
-      <div class="actions">
-        <a class="btn primary" id="btn-quote" href="#quote" data-i18n="cta_quote"></a>
-        <a class="btn ghost" id="btn-work" href="#work" data-i18n="cta_work"></a>
-      </div>
-    </div>
-    <div class="scene" id="scene">
-      <div class="art" role="img" aria-label="A glass pane shatters and reveals a sunny terrace, then glass panels with gold frames slide in to close it">
-        <svg class="terrace" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:#DCE9F6"/><stop offset="1" style="stop-color:#F8E7BF"/></linearGradient>
-            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:#4C7DAE"/><stop offset="1" style="stop-color:#2B5685"/></linearGradient>
-          </defs>
-          <rect width="400" height="260" fill="url(#sky)"/>
-          <circle class="t-sun" cx="290" cy="170" r="34"/>
-          <rect y="250" width="400" height="100" fill="url(#sea)"/>
-          <path d="M0 266h400M0 290h400M0 318h400" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
-          <rect y="340" width="400" height="160" style="fill:#D9C7A1"/>
-          <path d="M0 374h400M0 410h400M0 452h400" stroke="#B9A57C" stroke-width="2"/>
-          <ellipse class="t-furn" cx="200" cy="420" rx="52" ry="13"/><rect class="t-furn" x="196" y="420" width="8" height="48"/><ellipse class="t-furn" cx="200" cy="470" rx="22" ry="5"/>
-          <rect class="t-furn" x="118" y="410" width="34" height="8" rx="3"/><rect class="t-furn" x="122" y="418" width="5" height="40"/><rect class="t-furn" x="144" y="418" width="5" height="40"/><rect class="t-furn" x="118" y="372" width="6" height="40"/>
-          <rect class="t-furn" x="248" y="410" width="34" height="8" rx="3"/><rect class="t-furn" x="252" y="418" width="5" height="40"/><rect class="t-furn" x="276" y="418" width="5" height="40"/><rect class="t-furn" x="276" y="372" width="6" height="40"/>
-          <rect class="t-furn" x="338" y="440" width="26" height="30" rx="4"/><path d="M351 440c-18-26-6-44 0-52 6 8 18 26 0 52z" style="fill:#5B8A6B"/>
-        </svg>
-        <div class="rail"></div>
-        <div class="panes"><div class="pane"></div><div class="pane"></div><div class="pane"></div></div>
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: <div class="shards"><div class="shard"></div><div class="shard"></div><div class="shard"></div><div class="shard"></div><div class="shard"></div><div class="shard"></div><div class="shard"></div><div class="shard"></div></div>
-        <svg class="cracks" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="48" y1="46" x2="0" y2="0" pathLength="1"/><line x1="48" y1="46" x2="50" y2="0" pathLength="1"/><line x1="48" y1="46" x2="100" y2="0" pathLength="1"/><line x1="48" y1="46" x2="100" y2="50" pathLength="1"/><line x1="48" y1="46" x2="100" y2="100" pathLength="1"/><line x1="48" y1="46" x2="50" y2="100" pathLength="1"/><line x1="48" y1="46" x2="0" y2="100" pathLength="1"/><line x1="48" y1="46" x2="0" y2="50" pathLength="1"/></svg>
-        <div class="glare"></div>
-      </div>
-      <button class="replay" type="button" aria-label="Replay animation">&#8635;</button>
-    </div>
-  </div></div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
 
-  <section id="services" data-section="services"><div class="wrap">
-    <h2 data-i18n="s_title"></h2>
-    <div class="rows">
-      <div class="row"><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p></div>
-      <div class="row"><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div>
-      <div class="row"><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div>
-    </div>
-  </div></section>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#estimate">Get Quote</a></li>
+                </ul>
+            </nav>
 
-  <section id="gift" class="dark gift" data-section="gift"><div class="wrap">
-    <h2 data-i18n="gift_title"></h2>
-    <p class="sub" data-i18n="gift_lead"></p>
-    <ul><li data-i18n="gift_1"></li><li data-i18n="gift_2"></li><li data-i18n="gift_3"></li></ul>
-    <a class="btn primary" href="#quote" data-i18n="gift_cta"></a>
-  </div></section>
+            <div class="header-socials">
+                <!-- SOCIAL LINKS: Add your actual URLs here -->
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </header>
 
-  <section id="process" data-section="process"><div class="wrap">
-    <h2 data-i18n="p_title"></h2>
-    <ol class="steps">
-      <li><h3 data-i18n="p1_t"></h3><p data-i18n="p1_d"></p></li>
-      <li><h3 data-i18n="p2_t"></h3><p data-i18n="p2_d"></p></li>
-      <li><h3 data-i18n="p3_t"></h3><p data-i18n="p3_d"></p></li>
-    </ol>
-  </div></section>
+    <!-- =========================================
+         HERO SECTION (VIDEO BACKGROUND)
+         ========================================= -->
+    <section class="hero" id="home">
+        <!-- VIDEO PLACEHOLDER: Replace src with your video URL -->
+        <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920">
+            <source src="YOUR_VIDEO_URL.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920" alt="Hero Background">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>Transform Your Terrace with <span>Premium Fiberglass</span></h1>
+            <p>Experience the perfect blend of elegance, durability, and seamless design. Custom glass enclosures tailored to your home.</p>
+            <div class="hero-buttons">
+                <a href="#estimate" class="btn btn-gold">Calculate Your Estimate</a>
+                <a href="#results" class="btn btn-outline">See Our Work</a>
+            </div>
+        </div>
+    </section>
 
-  <section id="work" data-section="work"><div class="wrap">
-    <h2 data-i18n="g_title"></h2>
-    <div class="gal" id="gallery"></div>
-  </div></section>
+    <!-- =========================================
+         BEFORE & AFTER SECTION
+         ========================================= -->
+    <section class="before-after" id="results">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stunning Transformations</h2>
+                <p>Drag the slider to see the incredible before and after results of our fiberglass terrace enclosures.</p>
+            </div>
 
-  <section id="reviews" data-section="reviews"><div class="wrap">
-    <h2 data-i18n="r_title"></h2>
-    <div class="revs" id="revs"></div>
-    <a class="btn ghost glink" id="btn-greview" href="#" data-i18n="r_google"></a>
-  </div></section>
+            <div class="ba-slider" id="baSlider">
+                <!-- BEFORE IMAGE -->
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200" alt="Before" class="before-img">
+                <!-- AFTER IMAGE -->
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200" alt="After" class="after-img" id="afterImg">
+                
+                <div class="ba-handle" id="baHandle"></div>
+                <span class="ba-label before">Before</span>
+                <span class="ba-label after">After</span>
+            </div>
+        </div>
+    </section>
 
-  <section id="quote" data-section="quote"><div class="wrap">
-    <h2 data-i18n="q_title"></h2>
-    <p class="sub" data-i18n="q_lead"></p>
-    <div class="formbox"></div>
-  </div></section>
-</div>
+    <!-- =========================================
+         ABOUT US SECTION
+         ========================================= -->
+    <section class="about-us" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Why Choose Ibiglass?</h2>
+                    <p>At iberglass.es, we specialize in creating high-end, custom fiberglass and glass enclosures that elevate your living space. With over a decade of experience in Spain, we combine cutting-edge materials with master craftsmanship.</p>
+                    <p>Our enclosures are designed to withstand the elements while providing unobstructed views, maximizing natural light, and adding significant value to your property.</p>
+                    
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Premium European Fiberglass & Glass</li>
+                        <li><i class="fas fa-check-circle"></i> Custom Tailored to Your Terrace Dimensions</li>
+                        <li><i class="fas fa-check-circle"></i> 10-Year Structural Warranty</li>
+                        <li><i class="fas fa-check-circle"></i> Professional Installation Team</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <!-- ABOUT IMAGE PLACEHOLDER -->
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800" alt="About Ibiglass">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ============ ABOUT ============ -->
-<div class="page" data-page="about" hidden>
-  <section style="border-top:0"><div class="wrap about">
-    <div>
-      <h2 data-i18n="a_title"></h2>
-      <p data-i18n="a_p1"></p>
-      <p data-i18n="a_p2"></p>
-      <h3 style="margin:32px 0 12px" data-i18n="a_v_title"></h3>
-      <div class="rows">
-        <div class="row"><h3 data-i18n="a_v1_t"></h3><p data-i18n="a_v1_d"></p></div>
-        <div class="row"><h3 data-i18n="a_v2_t"></h3><p data-i18n="a_v2_d"></p></div>
-        <div class="row"><h3 data-i18n="a_v3_t"></h3><p data-i18n="a_v3_d"></p></div>
-      </div>
-      <p style="margin-top:28px"><a class="btn primary" href="#quote" data-i18n="a_cta"></a></p>
-    </div>
-    <div class="photo" id="about-photo"><div class="ph" style="height:100%"><span data-i18n="g_ph"></span></div></div>
-  </div></section>
-</div>
+    <!-- =========================================
+         REVIEWS SECTION
+         ========================================= -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it. Hear from homeowners who have transformed their spaces with Ibiglass.</p>
+            </div>
 
-<!-- ============ CONTACT ============ -->
-<div class="page" data-page="contact" hidden>
-  <section class="dark" style="min-height:70vh"><div class="wrap">
-    <h2 data-i18n="c_title"></h2>
-    <p class="sub" data-i18n="c_lead"></p>
-    <div class="actions">
-      <a class="btn primary" id="btn-call" href="#" data-i18n="c_call"></a>
-      <a class="btn ghost" id="btn-wa" href="#" data-i18n="c_wa"></a>
-      <a class="btn ghost" id="btn-mail" href="#" data-i18n="c_mail"></a>
-    </div>
-    <div class="cinfo">
-      <div><h3 data-i18n="c_addr_t"></h3><p data-i18n="c_addr"></p></div>
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: <div><h3 data-i18n="c_hours_t"></h3><p data-i18n="c_hours"></p></div>
-    </div>
-    <div class="formbox"></div>
-    <div class="links"><a id="lnk-ig" href="#" data-i18n="l_ig"></a><a id="lnk-gb" href="#" data-i18n="l_gb"></a></div>
-  </div></section>
-</div>
-</main>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Absolutely thrilled with our new terrace enclosure. The team was professional, clean, and the finish is flawless. It feels like we added a whole new room to our house!"</p>
+                    <p class="review-author">- Carlos M., Madrid</p>
+                </div>
 
-<footer class="site"><div class="wrap" data-i18n="footer"></div></footer>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The quality of the fiberglass and glass is top-notch. We can now use our terrace even in the middle of winter. Highly recommend Ibiglass for their attention to detail."</p>
+                    <p class="review-author">- Elena R., Barcelona</p>
+                </div>
 
-<template id="tpl-form">
-<form class="qform">
-  <div class="grid">
-    <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
-    <label><span data-i18n="f_phone"></span><input name="phone" type="tel" required autocomplete="tel"></label>
-    <label><span data-i18n="f_email"></span><input name="email" type="email" autocomplete="email"></label>
-    <label><span data-i18n="f_city"></span><input name="city" autocomplete="address-level2"></label>
-    <label><span data-i18n="f_type"></span><select name="type"><option value="Terrace" data-i18n="f_t1"></option><option value="Balcony" data-i18n="f_t2"></option><option value="Other" data-i18n="f_t3"></option></select></label>
-    <label><span data-i18n="f_qty"></span><input name="qty" type="number" min="1" inputmode="numeric"></label>
-    <label><span data-i18n="f_w"></span><input name="width_cm" type="number" min="1" inputmode="decimal"></label>
-    <label><span data-i18n="f_h"></span><input name="height_cm" type="number" min="1" inputmode="decimal"></label>
-  </div>
-  <label class="full"><span data-i18n="f_msg"></span><textarea name="message" rows="4"></textarea></label>
-  <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <label class="check"><input type="checkbox" name="consent" required><span data-i18n="f_consent"></span></label>
-  <button class="btn primary" type="submit" data-i18n="f_send"></button>
-  <p class="status" role="status"></p>
-</form>
-</template>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"From the initial quote to the final installation, the process was seamless. The calculator on their site gave a very accurate estimate. Five stars!"</p>
+                    <p class="review-author">- Javier L., Valencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-/* Builds the page from SITE. No need to edit. */
-(function () {
-  var S = window.SITE, PAGES = ["home", "about", "contact"];
-  function $(id) { return document.getElementById(id); }
-  function all(s) { return document.querySelectorAll(s); }
-  function T() { return S.text[document.documentElement.lang] || S.text.en; }
+    <!-- =========================================
+         ESTIMATE CALCULATOR & CONTACT FORM
+         ========================================= -->
+    <section class="estimate-section" id="estimate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get Your Instant Estimate</h2>
+                <p>Fill in your details and terrace dimensions below. We will calculate an estimate and our team will connect with you immediately.</p>
+            </div>
 
-  // logo
-  var lg = $("logo");
-  if (S.logo) { var li = document.createElement("img"); li.src = S.logo; li.alt = S.brand; li.style.height = S.logoHeight + "px"; lg.appendChild(li); }
-  else lg.textContent = S.brand;
+            <div class="estimate-container">
+                <form id="estimateForm" onsubmit="submitForm(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="+34 600 000 000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number</label>
+                            <input type="tel" id="whatsapp" placeholder="+34 600 000 000" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label>Terrace Dimensions (in meters)</label>
+                            <div class="size-inputs">
+                                <input type="number" id="width" placeholder="Width (m)" step="0.1" min="0" oninput="calculateEstimate()" required>
+                                <input type="number" id="length" placeholder="Length (m)" step="0.1" min="0" oninput="calculateEstimate()" required>
+                            </div>
+                        </div>
+                    </div>
 
-  // links
-  $("btn-quote").href = S.buttons.quote; $("btn-work").href = S.buttons.work;
-  $("btn-call").href = "tel:" + S.phone; $("btn-wa").href = "https://wa.me/" + S.whatsapp; $("btn-mail").href = "mailto:" + S.email;
-  $("lnk-ig").href = S.instagram; $("lnk-gb").href = S.googleBusiness; $("btn-greview").href = S.googleBusiness;
+                    <!-- CALCULATED ESTIMATE DISPLAY -->
+                    <div class="estimate-result" id="estimateResult">
+                        <h3>Your Estimated Area & Price</h3>
+                        <p>Total Area: <strong id="totalArea">0</strong> m²</p>
+                        <p class="price">Estimated: <span id="totalPrice">0</span> €</p>
+                        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">*Final price may vary based on specific customizations and site inspection.</p>
+                    </div>
 
-  // section visibility
-  all("[data-section]").forEach(function (el) { el.hidden = S.show[el.getAttribute("data-section")] === false; });
+                    <button type="submit" class="btn btn-gold submit-btn">Connect With An Expert <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  // photos
-  function photo(box, src, alt) {
-    var im = document.createElement("img"); im.src = src; im.alt = alt || ""; box.innerHTML = ""; box.appendChild(im);
-  }
-  if (S.heroVideo) {
-    var hb = $("herob"), v = document.createElement("video");
-    var calm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var small = window.matchMedia && matchMedia("(max-width: 820px)").matches;
-    v.muted = true; v.defaultMuted = true; v.loop = !calm; v.autoplay = !calm; v.playsInline = true;
-    v.setAttribute("playsinline", ""); v.setAttribute("muted", ""); v.setAttribute("aria-hidden", "true"); v.preload = "auto";
-    if (S.heroPoster) v.poster = S.heroPoster;
-    v.src = (small && S.heroVideoMobile) ? S.heroVideoMobile : S.heroVideo;
-    hb.insertBefore(v, hb.firstChild); hb.classList.add("cine");
-    if (!calm && v.play) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
-  }
-  if (S.heroImage) { var sc = $("scene"); sc.className = "photo"; sc.removeAttribute("role"); sc.removeAttribute("aria-label"); photo(sc, S.heroImage, S.heroAlt); }
-  if (S.aboutImage) photo($("about-photo"), S.aboutImage, S.aboutAlt);
-  var gal = $("gallery"), items = [];
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: for (var i = 0; i < 5; i++) {
-    var w = document.createElement("div"); w.className = "gi"; w.tabIndex = 0;
-    if (S.gallery[i]) { var g = document.createElement("img"); g.src = S.gallery[i]; g.alt = (S.galleryAlt && S.galleryAlt[i]) || ""; g.loading = "lazy"; w.appendChild(g); }
-    else { var ph = document.createElement("div"); ph.className = "ph"; ph.innerHTML = '<span data-i18n="g_ph"></span>'; w.appendChild(ph); }
-    gal.appendChild(w); items.push(w);
-  }
-  // touch screens have no hover: colour each photo while it is in view
-  if (window.matchMedia && matchMedia("(hover: none)").matches && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle("on", e.isIntersecting); }); }, { threshold: 0.6 });
-    items.forEach(function (it) { io.observe(it); });
-  }
+    <!-- =========================================
+         SPECIAL OFFER / GIFT SECTION
+         ========================================= -->
+    <section class="special-offer">
+        <div class="container offer-content">
+            <div class="offer-badge">Exclusive Limited Offer</div>
+            <h2>Book This Month & Receive <span>FREE Gifts</span></h2>
+            <p>We want your new terrace to stay perfect for years to come. That's why we are including premium maintenance gifts with every enclosure installed this month.</p>
+            
+            <div class="gift-items">
+                <div class="gift-item">
+                    <div class="gift-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>Robot Glass Cleanser</h4>
+                    <p>Automated cleaning for spotless glass</p>
+                </div>
+                <div class="gift-item">
+                    <div class="gift-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>1-Year Free Check-Up</h4>
+                    <p>Comprehensive maintenance & inspection</p>
+                </div>
+            </div>
 
-  // quote forms (home and contact)
-  all(".formbox").forEach(function (box) {
-    box.appendChild($("tpl-form").content.cloneNode(true));
-    var f = box.querySelector("form"), st = box.querySelector(".status"), btn = box.querySelector("button");
-    f.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (f.elements.website.value) return;
-      var t = T(), data = {};
-      new FormData(f).forEach(function (v, k) { if (k !== "website" && k !== "consent") data[k] = v; });
-      if (S.formEndpoint) {
-        btn.disabled = true; data._subject = "Iberglass quote request";
-        fetch(S.formEndpoint, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(data) })
-          .then(function (r) { if (!r.ok) throw 0; f.reset(); st.textContent = t.f_ok; })
-          .catch(function () { st.textContent = t.f_err; })
-          .then(function () { btn.disabled = false; });
-      } else {
-        var map = [["f_name", "name"], ["f_phone", "phone"], ["f_email", "email"], ["f_city", "city"], ["f_type", "type"], ["f_qty", "qty"], ["f_w", "width_cm"], ["f_h", "height_cm"], ["f_msg", "message"]];
-        var lines = ["Iberglass"];
-        map.forEach(function (m) { if (data[m[1]]) lines.push(t[m[0]] + ": " + data[m[1]]); });
-        window.open("https://wa.me/" + S.whatsapp + "?text=" + encodeURIComponent(lines.join("\n")), "_blank");
-        st.textContent = t.f_wa;
-      }
-    });
-  });
+            <a href="#estimate" class="btn btn-gold">Claim Your Free Gifts</a>
+        </div>
+    </section>
 
-  // reviews
-  function reviews(lang) {
-    var d = T(), box = $("revs"), list = (S.reviews && S.reviews.length) ? S.reviews : [{}, {}, {}];
-    box.innerHTML = "";
-    list.forEach(function (r) {
-      var q = document.createElement("blockquote");
-      q.innerHTML = '<div class="stars" aria-hidden="true"></div><p></p><footer></footer>';
-      q.querySelector(".stars").textContent = "★★★★★".slice(0, r.stars || 5);
-      q.querySelector("p").textContent = (r.text && r.text[lang]) || d.r_ph;
-      q.querySelector("footer").textContent = [r.name || d.r_name, r.city].filter(Boolean).join(", ");
-      box.appendChild(q);
-    });
-  }
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="logo-text" style="font-size: 1.5rem;">ibi<span>glass</span>.es</h3>
+                    <p>Premium fiberglass and glass terrace enclosures in Spain. Transforming outdoor spaces into luxurious, year-round living areas.</p>
+                    <div class="footer-socials">
+                        <!-- SOCIAL LINKS: Add your actual URLs here -->
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
 
-  // business data for search engines
-  var ld = document.createElement("script"); ld.type = "application/ld+json";
-  ld.text = JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", "name": S.brand, "areaServed": "Spain", "telephone": S.phone, "email": S.email });
-  document.head.appendChild(ld);
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#results">Our Work</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#estimate">Get Quote</a></li>
+                    </ul>
+                </div>
 
-  // language
-  function apply(lang) {
-    if (!S.text[lang]) lang = "en";
-    document.documentElement.lang = lang;
-    var d = S.text[lang];
-    all("[data-i18n]").forEach(function (el) { var v = d[el.getAttribute("data-i18n")]; if (v !== undefined) el.textContent = v; });
-    all(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang)); });
-    reviews(lang);
-    try { localStorage.setItem("iberglass-lang", lang); } catch (e) {}
-  }
-  all(".lang button").forEach(function (b) { b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); }); });
-  var lang = "";
-  try { lang = localStorage.getItem("iberglass-lang") || ""; } catch (e) {}
-  if (!lang) lang = S.defaultLang !== "auto" ? S.
-[22-Oct-26 11:53 AM] Syuzanna Sargsyan: defaultLang : ((navigator.language || "").toLowerCase().indexOf("es") === 0 ? "es" : "en");
-  apply(lang);
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 10px;"></i> Madrid, Spain</li>
+                        <li><i class="fas fa-phone" style="color: var(--accent-gold); margin-right: 10px;"></i> +34 600 000 000</li>
+                        <li><i class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 10px;"></i> info@iberglass.es</li>
+                    </ul>
+                </div>
+            </div>
 
-  // hero animation: glass shatters, terrace appears, glass panels slide in
-  var scn = $("scene"), played = false;
-  function play() {
-    if (!scn.classList.contains("scene")) return;
-    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    scn.classList.remove("play"); void scn.offsetWidth; scn.classList.add("play");
-  }
-  var rb = scn.querySelector(".replay"); if (rb) rb.addEventListener("click", play);
+            <div class="footer-bottom">
+                <p>&copy; 2026 iberglass.es. All Rights Reserved. | Premium Terrace Enclosures</p>
+            </div>
+        </div>
+    </footer>
 
-  // pages (#home, #about, #contact) and in-page anchors (#quote, #work ...)
-  function show(h) {
-    var el = null, page = "home";
-    if (PAGES.indexOf(h) > -1) page = h;
-    else { el = h ? $(h) : null; var pg = el && el.closest(".page"); if (pg) page = pg.getAttribute("data-page"); else el = null; }
-    all(".page").forEach(function (p) { p.hidden = p.getAttribute("data-page") !== page; });
-    all("nav a").forEach(function (a) { if (a.getAttribute("href") === "#" + page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
-    if (page === "home" && !played) { played = true; play(); }
-    if (el) el.scrollIntoView(); else window.scrollTo(0, 0);
-  }
-  // clicks work everywhere, including embedded previews that block hash changes
-  document.addEventListener("click", function (e) {
-    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
-    if (!a) return;
-    var h = a.getAttribute("href").slice(1);
-    if (!h || h === "#") return;
-    e.preventDefault();
-    show(h);
-    try { history.replaceState(null, "", "#" + h); } catch (err) {}
-  });
-  window.addEventListener("hashchange", function () { show((location.hash || "#home").slice(1)); });
-  show((location.hash || "#home").slice(1));
-})();
-</script>
+    <!-- =========================================
+         JAVASCRIPT (INTERACTIVITY)
+         ========================================= -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('main-nav').classList.toggle('active');
+        }
+
+        // Before & After Slider Logic
+        const slider = document.getElementById('baSlider');
+        const handle = document.getElementById('baHandle');
+        const afterImg = document.getElementById('afterImg');
+        let isDragging = false;
+
+        function updateSlider(x) {
+            const rect = slider.getBoundingClientRect();
+            let pos = (x - rect.left) / rect.width;
+            pos = Math.max(0, Math.min(1, pos));
+            
+            handle.style.left = `${pos * 100}%`;
+            afterImg.style.clipPath = `inset(0 ${100 - (pos * 100)}% 0 0)`;
+        }
+
+        slider.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        slider.addEventListener('mousemove', (e) => {
+            if (isDragging) updateSlider(e.clientX);
+        });
+        
+        // Touch support for mobile
+        slider.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+        slider.addEventListener('touchmove', (e) => {
+            if (isDragging) updateSlider(e.touches[0].clientX);
+        });
+
+        // Estimate Calculator Logic
+        function calculateEstimate() {
+            const width = parseFloat(document.getElementById('width').value) || 0;
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const resultDiv = document.getElementById('estimateResult');
+            
+            if (width > 0 && length > 0) {
+                const area = width * length;
+                // Placeholder pricing: 350€ per square meter. Adjust as needed.
+                const price = area * 350; 
+                
+                document.getElementById('totalArea').textContent = area.toFixed(2);
+                document.getElementById('totalPrice').textContent = price.toLocaleString('es-ES', {maximumFractionDigits: 0});
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.style.display = 'none';
+            }
+        }
+
+        // Form Submission Logic
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Gather data
+            const data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                width: document.getElementById('width').value,
+                length: document.getElementById('length').value,
+                area: document.getElementById('totalArea').textContent,
+                estimate: document.getElementById('totalPrice').textContent
+            };
+
+            // Here you would normally send the data to your backend/email service
+            // For demonstration, we'll just show an alert and log the data
+            console.log("Form Data Submitted:", data);
+            
+            alert(`Thank you, ${data.name}! Your estimate for ${data.area} m² is ${data.estimate} €. Our team will connect with you on WhatsApp shortly.`);
+            
+            // Reset form
+            document.getElementById('estimateForm').reset();
+            document.getElementById('estimateResult').style.display = 'none';
+        }
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('main-nav').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
